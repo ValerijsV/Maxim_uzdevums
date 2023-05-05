@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>frontend задание</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_dUgU737p2JXYCOVIXsjY4pNSGLH8xRk"></script>
+  <script src = "index.js"></script>
+  <link rel="stylesheet" href="leaflet.css">
+  <script src="leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+
+		<div id="screen1">
+            <div id="screen_title">
+                <h4>Войти в систему</h4>
+            </div>
+            <div>
+                <br></br>
+                <br></br>
+                <form></form>
+                <label for="username">Имя пользователя:</label><br></br>
+                <input type="text" id="username" name="username"><br></br>
+                
+                <label for="password">Пароль:</label><br></br>
+                <input type="password" id="password" name="password">
+
+                <button class="my-button3" type="submit" onclick="login()">Войти</button>
+                <script>
+                    function login() {
+                    var username = document.getElementById("username").value;
+                    var password = document.getElementById("password").value;
+
+                    if (username === "user" && password === "password") {
+                        // Если имя пользователя и пароль соответствуют заданным значениям,
+                        // перенаправляем пользователя на следующую страницу или активируем нужный экран
+                        var screen2 = document.querySelector('#screen2');
+                         // Меняем свойство display на block, чтобы сделать экран активным
+                     screen2.style.display = 'block';
+                     } else {
+                          // Если имя пользователя и пароль не соответствуют заданным значениям,
+                         // отображаем сообщение об ошибке
+                     alert("Неверное имя пользователя или пароль.");
+  }
+}
+                </script>
+  
+            </div>
+
+            </script>
+        </div>
+
+		<div id="screen2">
+            <div id="screen_title">
+                <h4>Главный экран</h4>
+            </div>
+            <button class="my-button2" type="button" onclick="goToThemap()">Перейти на карту</button>
+            <script>
+                function goToThemap() {
+                    var screen3 = document.querySelector('#screen3');
+                    screen3.style.display = 'block';
+                
+};
+            </script>
+            <button class="my-button3" type="button" onclick="logout()">Выйти</button>
+            <script>
+            function logout() {
+            var screen2 = document.querySelector('#screen2');
+            var screen3 = document.querySelector('#screen3')
+            screen2.style.display = 'none';
+            screen3.style.display = 'none';
+            
+            
+            }
+            </script>
+        </div>
+		<div id="screen3">
+            <div id="screen_title">
+                <button class="my-button" type="button" onclick="goBack()">Назад</button>
+                <script>
+                    function goBack() {
+                    var screen3 = document.querySelector('#screen3') 
+                    screen3.style.display = 'none'; 
+                    }
+
+
+                </script>
+                <h3 style="padding: 70px;">Карта</h3>
+            </div>  
+            <div id="map"></div>
+
+<script>
+    // Создаем карту
+    var mymap = L.map('map').setView([56.949, 24.105], 10);
+    
+    // Добавляем базовый слой OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Valerij &copy;',
+        maxZoom: 18,
+    }).addTo(mymap);
+    
+    // Создаем массив с координатами вершин звезды
+    var starPoints = [
+        [57.010913, 24.190380],
+        [56.996420, 24.175672],
+        [56.991460, 24.149758],
+        [56.977340, 24.163066],
+        [56.961688, 24.153961],
+        [56.963979, 24.188279],
+        [56.951758, 24.205789],
+        [56.965506, 24.216995],
+        [56.968560, 24.249213],
+        [56.983065, 24.228201],
+        [56.995657, 24.238006],
+        [56.997564, 24.211392],
+        [57.010913, 24.190380]
+    ]; 
+    // Создаем полигон с координатами звезды и задаем его стиль
+    var star = L.polygon(starPoints, {color: 'blue', fillColor: '#f03', fillOpacity: 0.0}).addTo(mymap);
+
+    </script>
+    <script>
+    // Создаем массив случайных координат для маркеров
+    var locations = [];
+    for (var i = 0; i < 100; i++) {
+      locations.push([57.02 + Math.random() * 0.6, 24.19 + Math.random() * 0.8]);
+      console.log(locations)
+    }
+    
+    // Создаем маркеры на карте для каждой случайной координаты
+    for (var i = 0; i < locations.length; i++) {
+      L.marker(locations[i]).addTo(mymap);
+    }
+    </script>    
+        </div>
+	</div>
+</body>
+</html>

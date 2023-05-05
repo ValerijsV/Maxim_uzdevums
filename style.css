@@ -1,0 +1,112 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+
+#screen1 {
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
+
+}
+
+#screen2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#screen3 {
+    position: fixed;
+    top: 50%;
+    right: 8%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+#screen_title {
+    width: 250px;
+    height: 70px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+.my-button {
+    background-color: rgb(244, 240, 240); /* Задаем цвет фона */
+    border: none; /* Убираем границу */
+    color: rgb(6, 3, 3); /* Задаем цвет текста */
+    padding: 15px 15px; /* Задаем отступы */
+    text-align: center; /* Центрируем текст */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px; /* Задаем размер шрифта */
+    margin: 10px 15px; /* Задаем отступы */
+    cursor: pointer; /* Делаем курсор при наведении на кнопку в виде указателя */
+    border-radius: 8px; /* Задаем скругление углов */
+  }
+
+  .my-button2 {
+    background-color: rgb(244, 240, 240);
+    color: rgb(6, 3, 3);
+    font-size: 16px;
+    padding: 10px 20px;
+    border-color: rgb(11, 11, 11);
+    border-radius: 5px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    top: 200px; /* Задайте вертикальное расположение кнопки */
+    left: 40px; /* Задайте горизонтальное расположение кнопки */
+  }
+
+  .my-button3 {
+    background-color: rgb(244, 240, 240);
+    color: rgb(6, 3, 3);
+    font-size: 16px;
+    padding: 10px 20px;
+    border-color: rgb(11, 11, 11);
+    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 290px; /* Задайте вертикальное расположение кнопки */
+    left: 80px; /* Задайте горизонтальное расположение кнопки */
+  }
+
+  
+.my-button::before {
+    content: ""; /* Очищаем содержимое псевдоэлемента */
+    display: inline-block; /* Задаем отображение псевдоэлемента в виде блока */
+    width: 0; /* Задаем ширину псевдоэлемента */
+    height: 0; /* Задаем высоту псевдоэлемента */
+    border-top: 10px solid transparent; /* Задаем верхнюю границу */
+    border-bottom: 10px solid transparent; /* Задаем нижнюю границу */
+    border-right: 10px solid rgb(11, 0, 0); /* Задаем правую границу */
+    margin-right: 10px; /* Задаем отступ справа */
+  }
+
+  #map {
+    height: 380px;
+    width: 100%;
+  }
